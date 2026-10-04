@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyber Awareness Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="home">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <main class="hero">
+        <div class="badge-pill">🛡️ Cyber Awareness Challenge</div>
+        <h1 class="hero-title">Can you spot the <span class="title-text">scam?</span></h1>
+        <p class="hero-sub">5 quick questions. Real tricks that attackers use.</p>
+
+        <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <p class="line l1">$ scanning your cyber skills...</p>
+            <p class="line l2">$ threats found: phishing, fake OTP calls, weak passwords</p>
+            <p class="line l3">$ status: ready<span class="cursor">_</span></p>
+        </div>
+
+        <a href="/quiz" class="start-btn">Start the challenge</a>
+
+        <div class="topics">
+            <span>🎣 Phishing</span>
+            <span>🔑 Passwords</span>
+            <span>📱 UPI scams</span>
+            <span>🌐 Safe browsing</span>
+        </div>
+    </main>
+</body>
+</html>

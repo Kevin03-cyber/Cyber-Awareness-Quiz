@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyber Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back">← Home</a>
+        <h1 class="page-title">🛡️ <span class="title-text">Cyber Challenge</span></h1>
+
+        <form method="POST" action="/result">
+            {% for q in questions %}
+            {% set qi = loop.index0 %}
+            <div class="card">
+                <p class="q"><span class="qnum">{{ loop.index }}</span><span>{{ q.question }}</span></p>
+                {% for opt in q.options %}
+                <label class="option">
+                    <input type="radio" name="q{{ qi }}" value="{{ loop.index0 }}" required>
+                    <span class="letter">{{ 'ABCD'[loop.index0] }}</span>
+                    <span>{{ opt }}</span>
+                </label>
+                {% endfor %}
+            </div>
+            {% endfor %}
+
+            <button type="submit" class="btn full-btn">Check my answers ⚡</button>
+        </form>
+    </div>
+</body>
+</html>

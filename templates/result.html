@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-perfect="{{ 'yes' if score == total else 'no' }}">
+    <div class="confetti" id="confetti"></div>
+
+    <div class="container">
+        <div class="card result-hero">
+            <div class="rank-emoji">{{ rank_emoji }}</div>
+            <p class="rank-label">Your rank</p>
+            <h1 class="rank-title"><span class="title-text">{{ rank_title }}</span></h1>
+            <p class="rank-text">{{ rank_text }}</p>
+
+            <div class="shields">
+                {% for i in range(total) %}
+                <span class="shield {{ 'on' if i < score else 'off' }}">🛡️</span>
+                {% endfor %}
+            </div>
+            <div class="score-big">{{ score }} / {{ total }} correct</div>
+
+            <div class="actions">
+                <a href="/quiz" class="btn">Play again with new questions ⚡</a>
+                <a href="/" class="btn btn-ghost">Home</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">Let's review</h2>
+
+        {% for item in review %}
+        <div class="card {{ 'right' if item.correct else 'wrong' }}">
+            <span class="tag {{ 'tag-right' if item.correct else 'tag-wrong' }}">{{ '✅ Nailed it' if item.correct else '❌ Not quite' }}</span>
+            <p class="q"><span class="qnum">{{ loop.index }}</span><span>{{ item.question }}</span></p>
+            <p class="line-answer">Your answer:
+                {% if item.chosen is not none %}
+                    {{ item.options[item.chosen] }}
+                {% else %}
+                    Not answered
+                {% endif %}
+            </p>
+            {% if not item.correct %}
+            <p class="line-answer">Correct answer: <strong class="good">{{ item.options[item.answer] }}</strong></p>
+            {% endif %}
+            <p class="why">💡 {{ item.explanation }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        if (document.body.dataset.perfect === "yes") {
+            var emojis = ["🎉", "✨", "🏆", "🛡️", "⭐"];
+            var box = document.getElementById("confetti");
+            for (var i = 0; i < 30; i++) {
+                var piece = document.createElement("span");
+                piece.textContent = emojis[i % emojis.length];
+                piece.style.left = Math.random() * 100 + "vw";
+                piece.style.animationDuration = 3 + Math.random() * 3 + "s";
+                piece.style.animationDelay = Math.random() * 1.5 + "s";
+                box.appendChild(piece);
+            }
+        }
+    </script>
+</body>
+</html>
