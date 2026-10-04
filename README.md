@@ -3,12 +3,15 @@
 A dark-themed quiz web app that teaches everyday cyber security: phishing, scams, passwords, and safe browsing. Every attempt gives you 5 fresh questions from a bank of 35, and every answer comes with a short explanation.
 
 ## Screenshots
-| Home | Quiz | Result |
-|------|------|--------|
-| <img width="1520" height="897" alt="image" src="https://github.com/user-attachments/assets/97e0e5c0-7fbf-4847-9ac6-563e10c581d7" />|
-| <img width="1490" height="915" alt="image" src="https://github.com/user-attachments/assets/fff6c36e-b2cc-4a3b-ab8d-3e80ae6f3442" />|
-| <img width="1482" height="892" alt="image" src="https://github.com/user-attachments/assets/29055827-9da6-48ed-9ce2-2bc0f448b0fe" />|
- 
+
+### Home
+<img width="1520" height="897" alt="Screenshot 2026-10-04 122045" src="https://github.com/user-attachments/assets/11eb59cc-2d9a-46e8-8312-e3950b8c0f40" />
+
+### Quiz
+<img width="1490" height="915" alt="Screenshot 2026-10-04 122147" src="https://github.com/user-attachments/assets/1d029f12-088f-48be-97a8-59b3e8f668f5" />
+
+### Result
+<img width="1482" height="892" alt="Screenshot 2026-10-04 122227" src="https://github.com/user-attachments/assets/940dddcf-6e56-48de-bef7-bc78e852a6b8" />
 
 ## Features
 - **Animated front page** with a hacker-terminal intro
